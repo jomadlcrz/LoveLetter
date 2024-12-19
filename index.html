@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Letter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8f9fa;
+        }
+
+        .mail-container {
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .mail-header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .mail-body {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        .btn.no {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="mail-container">
+        <div class="mail-header">Mahal Mo Ba Ako?</div>
+        <div class="mail-body">Sagutin mo nang tapat! 😜</div>
+        <div class="button-container">
+            <button class="btn yes" onclick="sayYes()">Yes</button>
+            <button class="btn no" onclick="sayNo()">No</button>
+        </div>
+    </div>
+
+    <script>
+        const noButton = document.querySelector('.btn.no');
+
+        function sayYes() {
+            alert("Sorry, hindi kita mahal. 😅");
+        }
+
+        function sayNo() {
+            const viewportWidth = window.innerWidth - 100; // Adjust for button width
+            const viewportHeight = window.innerHeight - 50; // Adjust for button height
+
+            const randomX = Math.floor(Math.random() * viewportWidth);
+            const randomY = Math.floor(Math.random() * viewportHeight);
+
+            noButton.style.position = 'absolute';
+            noButton.style.left = `${randomX}px`;
+            noButton.style.top = `${randomY}px`;
+        }
+    </script>
+</body>
+</html>
